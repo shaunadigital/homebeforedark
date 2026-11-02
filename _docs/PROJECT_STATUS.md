@@ -1,6 +1,6 @@
 # Project status
 
-Last updated 2026-10-15 (session wrap-up). Live at https://games.shauna.digital/homebeforedark/ (deploys from `main`).
+Last updated 2026-10-15 (session wrap-up). Live at https://shauna.digital/games/homebeforedark/ (deploys from `main`).
 
 ## Current state
 
@@ -23,7 +23,7 @@ Last updated 2026-10-15 (session wrap-up). Live at https://games.shauna.digital/
 
 | Decision | Resolution | Why | Date |
 |---|---|---|---|
-| Where the game lives | Own repo and Vercel project, mounted into games.shauna.digital by rewrite | Shauna wanted it separate, matching how 13 Beads is set up | 2026-10-08 |
+| Where the game lives | Own repo and Vercel project, mounted into shauna.digital/games by rewrite | Shauna wanted it separate, matching how 13 Beads is set up | 2026-10-08 |
 | Address | `/homebeforedark` (not `/home-before-dark`) | Shauna's requested URL | 2026-10-08 |
 | Progression model | One night, one road, fixed distance home | Shauna chose it over a 7-night week or endless nights; the long road through the woods is the point | 2026-10-08 |
 | On crash | Back to the start of the road | Shauna chose arcade tension over checkpoints | 2026-10-08 |

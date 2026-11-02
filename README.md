@@ -2,13 +2,13 @@
 
 A small browser game. Ride home at night. When the streetlights flicker, something is coming. Swerve.
 
-Play it at https://games.shauna.digital/homebeforedark/
+Play it at https://shauna.digital/games/homebeforedark/
 
 ## How it is set up
 
 - Plain static files: `index.html`, `icon.png` (home screen icon) and `preview.png` (share image). No build step.
 - Hosting: Vercel project `homebeforedark` (team `shaunagits-projects`), deployed automatically from the `main` branch.
-- The games site (`shaunagits/games`) forwards `games.shauna.digital/homebeforedark/` to this project, so all paths inside the game must stay relative.
+- The games site (`shaunagits/games`) forwards `shauna.digital/games/homebeforedark/` to this project, so all paths inside the game must stay relative.
 
 ## How a ride works
 
@@ -29,13 +29,13 @@ Play it at https://games.shauna.digital/homebeforedark/
 - A shadow on the road shows where a leaping creature will land.
 - Crash and you start over from the beginning. After the first crash of a visit, a tap can skip ahead after `T_QUICK` seconds. Your dropped backpack marks your closest finish on later rides.
 - Reaching home plays the ending: he hops off, the bike tips over, he goes inside, the streetlights and porch light go out with eyes in the trees, and the screen goes dark (timings `E_OFF` to `E_AGAIN`).
-- Controls: left and right arrows or A and D, Up or W to pedal harder; on touch, tap the left or right half to move to that lane (steers on touch down) and swipe up to pedal harder. P or Esc pauses, M mutes. "< GAMES" (top left on the title, crash and ending screens), Esc on those screens, or ALL GAMES in the pause menu goes back to games.shauna.digital. It is hidden while riding so a steering tap cannot leave the game.
+- Controls: left and right arrows or A and D, Up or W to pedal harder; on touch, tap the left or right half to move to that lane (steers on touch down) and swipe up to pedal harder. P or Esc pauses, M mutes. "< GAMES" (top left on the title, crash and ending screens), Esc on those screens, or ALL GAMES in the pause menu goes back to shauna.digital/games. It is hidden while riding so a steering tap cannot leave the game.
 
 ## Things to know
 
 - Music is a loop built into the code. To use an audio track instead, add a file named `music.mp3` next to `index.html`.
 - The music is muffled a little while a streetlight flickers.
 - Sound effects (bike wheel whir, streetlight hum, flicker crackle, lane swish, monster leap, crash) are currently switched off so only the music plays. `SFX_VOLUME` at the top of the sound section turns them back on. The clock chime is the one exception: it plays on its own quiet channel (`chime()`), not through the effects.
-- Closest finish (`homebeforedark-closest`), best score (`homebeforedark-score`), whether you have made it home (`homebeforedark-home`; an old best time in `homebeforedark-time` also counts) and the mute setting (`homebeforedark-muted`) are saved in the browser per web address, so anything saved at the `vercel.app` address does not appear on games.shauna.digital.
+- Closest finish (`homebeforedark-closest`), best score (`homebeforedark-score`), whether you have made it home (`homebeforedark-home`; an old best time in `homebeforedark-time` also counts) and the mute setting (`homebeforedark-muted`) are saved in the browser per web address, so anything saved at the `vercel.app` address does not appear on shauna.digital/games.
 - Tuning knobs (distance, speed, warning time, spacing, pairs, triples, feints, roots, the farmhouse, the flip side, the chaser, close calls, ending timings) are at the top of the script in `index.html`.
 - Project status, decisions and next steps: `_docs/PROJECT_STATUS.md` and `_docs/TODO.md`.

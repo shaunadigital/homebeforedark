@@ -8,8 +8,8 @@
 <meta property="og:title" content="Home Before Dark">
 <meta property="og:description" content="Ride home in the dark. When the streetlights flicker, something is coming.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://games.shauna.digital/homebeforedark/preview.png">
-<meta property="og:url" content="https://games.shauna.digital/homebeforedark/">
+<meta property="og:image" content="https://shauna.digital/games/homebeforedark/preview.png">
+<meta property="og:url" content="https://shauna.digital/games/homebeforedark/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="icon.png">
 <title>Home Before Dark</title>
@@ -405,7 +405,7 @@ function setPaused(p){
   if(music){if(p)music.pause();else music.play().catch(()=>{});}
 }
 /* back to the games page; when the game is opened on its own vercel.app address, go to the games site instead */
-const GAMES_URL=location.hostname==='games.shauna.digital'?'/':'https://games.shauna.digital/';
+const GAMES_URL='https://shauna.digital/games/';
 function toGames(){location.href=GAMES_URL;}
 function backShown(){return state==='title'||(state==='dying'&&dieT>(crashes>1?T_QUICK:T_AGAIN))||(state==='home'&&homeT>E_AGAIN);}
 function quit(){

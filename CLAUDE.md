@@ -4,7 +4,7 @@ A pixel-art browser game: a boy rides his bike home at night down one road throu
 
 - Everything is in `index.html` (canvas + plain JavaScript, no build step), plus `icon.png` and `preview.png`.
 - Repository `shaunagits/homebeforedark` (public since 2026-10-14; history rewritten so every commit is Shauna Arnold with the GitHub noreply address), Vercel project `homebeforedark`, team `shaunagits-projects`. Every push to `main` deploys to production.
-- Players reach it at https://games.shauna.digital/homebeforedark/ through a rewrite in the `shaunagits/games` repo. Keep every asset path relative.
+- Players reach it at https://shauna.digital/games/homebeforedark/ through a rewrite in the `shaunagits/games` repo. Keep every asset path relative.
 - No test suite. Verify changes with an automated playtest (Playwright plus the `window.__nr` hooks); see `_docs/findings/2026-10-08-playtesting-with-bots.md`.
 - Sound effects are off on purpose (music only). Shauna wants them added back one layer at a time and kept light against the music.
 - The creature design is Shauna's call; do not redraw it without asking (see the decisions table).
