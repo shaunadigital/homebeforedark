@@ -407,6 +407,7 @@ function setPaused(p){
 /* back to the games page; when the game is opened on its own vercel.app address, go to the games site instead */
 const GAMES_URL='https://shauna.digital/games/';
 function toGames(){location.href=GAMES_URL;}
+function openFeedback(){if(window.GameFeedback)GameFeedback.open({score:score,closest_ft:closest});else location.href=GAMES_URL;}
 function backShown(){return state==='title'||(state==='dying'&&dieT>(crashes>1?T_QUICK:T_AGAIN))||(state==='home'&&homeT>E_AGAIN);}
 function quit(){
   if(ac)ac.resume().catch(()=>{});
@@ -944,6 +945,8 @@ function render(){
     ctext('RESUME',py+28,1,ink,blink?1:0.75);
     ctext('QUIT',py+46,1,ink,0.75);
     ctext('ALL GAMES',py+64,1,ink,0.75);
+    ctext('FEEDBACK',py+82,1,ink,0.75);
+    ctext('MADE BY SHAUNA',py+100,1,ink,0.6);
   }
   if(backShown()&&!paused)text('< GAMES',4,5,1,ink,0.7);
   drawMute();
@@ -963,6 +966,7 @@ addEventListener('keydown',e=>{
   else if(k==='p'||k==='P'||k==='Escape'){e.preventDefault();if(state==='play')setPaused(!paused);else if(k==='Escape'&&backShown())toGames();}
   else if((k==='g'||k==='G')&&(paused||backShown())){toGames();}
   else if((k==='q'||k==='Q')&&paused){quit();}
+  else if((k==='f'||k==='F')&&paused){openFeedback();}
 });
 let pDown=null;
 stage.addEventListener('pointerdown',e=>{
@@ -976,6 +980,8 @@ stage.addEventListener('pointerdown',e=>{
     if(Math.abs(gx-CX)<44&&gy>=py+22&&gy<py+39)setPaused(false);
     else if(Math.abs(gx-CX)<44&&gy>=py+39&&gy<py+58)quit();
     else if(Math.abs(gx-CX)<44&&gy>=py+58&&gy<py+76)toGames();
+    else if(Math.abs(gx-CX)<44&&gy>=py+76&&gy<py+94)openFeedback();
+    else if(Math.abs(gx-CX)<60&&gy>=py+94&&gy<py+112)location.href='https://shauna.dev';
     pDown=null;return;
   }
   steer(gx<W/2?-1:1);   // steer the moment a finger touches a side
@@ -1022,5 +1028,6 @@ window.__nr={get state(){return state;},get dieT(){return dieT;},get mons(){retu
   get nearCount(){return nearCount;},get score(){return score;},get farmT(){return farmT;},get playT(){return playT;},sprint(on){sprintKey=!!on;}};
 })();
 </script>
+<script src="https://shauna.digital/games/feedback.js" defer></script>
 </body>
 </html>
